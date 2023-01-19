@@ -1,0 +1,42 @@
+html {
+    height : 100%;
+}
+
+body {
+    display: flex;
+    background-color: aqua;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: stretch;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#choice {
+    flex: 1;
+    background-color: #ccc;
+    border: #000 solid 1px;
+    padding: 5px;
+    text-align: center;
+}
+
+#grid {
+    /* height: 1vw; */
+    flex: 50;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: stretch;
+}
+
+.row {
+    flex: 1;
+    display: flex;
+}
+
+.box {
+    flex: 1;
+    background-color: #ccf;
+    border: #000 solid 1px;
+}
