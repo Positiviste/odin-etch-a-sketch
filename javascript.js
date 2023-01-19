@@ -31,7 +31,14 @@ function listen () {
     const listBox = document.querySelectorAll('.box');
     Array.from(listBox).forEach(box => {
     box.addEventListener('mouseenter', function (box) {
-        this.style.backgroundColor = '#000';
+        const fillingStyle = document.getElementById("fillingStyle");
+        if (fillingStyle.value === 'bw') {
+            nb(this);
+        } else if (fillingStyle.value === 'funky') {
+            funky(this);
+        } else if (fillingStyle.value === 'grayscale') {
+            grayscale(this);
+        }
     });
 });
 }
@@ -40,7 +47,7 @@ function listen () {
 let gridSize;
 const gridSizeButton = document.getElementById('gridSizeButton');
 gridSizeButton.addEventListener('click', () => {
-    gridSize = prompt('Enter the size of the grid between 5 and 50, pretty please : ', '16')
+    gridSize = prompt('Enter the size of the grid (between 5 and 50 is advised), pretty please : ', '16')
     removeGrid();
     createGrid(gridSize, gridSize);
     listen();
@@ -56,3 +63,36 @@ function removeGrid () {
       }
     console.log(everyBox);
 }
+
+function nb (element) {
+    element.style.backgroundColor = '#000';
+}
+
+function funky (element) {
+    const randomColor = "#" + Math.floor(Math.random()*16777215).toString(16);
+    element.style.backgroundColor = randomColor;
+}
+
+function grayscale (element) {
+    let actualColor = element.style.backgroundColor;
+    // console.log(actualColor);
+
+    if (actualColor == 'rgb(200, 200, 200)') {
+        console.log('1');
+        element.style.backgroundColor = 'rgb(150, 150, 150)';
+    } else if (actualColor == 'rgb(150, 150, 150)') {
+        console.log('2');
+        element.style.backgroundColor = 'rgb(100, 100, 100)';
+    } else if (actualColor == 'rgb(100, 100, 100)') {
+        console.log('2');
+        element.style.backgroundColor = 'rgb(50, 50, 50)';
+    } else if (actualColor == 'rgb(50, 50, 50)') {
+        console.log('2');
+        element.style.backgroundColor = 'rgb(0, 0, 0)';
+    } else if (actualColor == 'rgb(0, 0, 0)') {
+    } else {
+        console.log('3');
+        element.style.backgroundColor = 'rgb(200, 200, 200)';
+    }
+}
+
