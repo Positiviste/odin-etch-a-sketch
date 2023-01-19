@@ -4,7 +4,6 @@ html {
 
 body {
     display: flex;
-    background-color: aqua;
     flex-direction: column;
     align-items: stretch;
     justify-content: stretch;
@@ -36,6 +35,6 @@ body {
 
 .box {
     flex: 1;
-    background-color: #ccf;
+    background-color: #ffffff;
     border: #000 solid 1px;
 }
