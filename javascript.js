@@ -1,9 +1,12 @@
 const grid = document.querySelector('#grid');
 
-function createBox() {
-    const box = document.createElement('span');
-    box.className = 'box';
-    grid.lastChild.appendChild(box);
+function createGrid(row, column) {
+    for (let x = 1; x <= row; x++) {
+        createRow();
+        for (let y = 1; y <= column; y++) {
+            createBox();
+        }
+    }
 }
 
 function createRow() {
@@ -12,14 +15,10 @@ function createRow() {
     grid.appendChild(row);
 }
 
-
-function createGrid(row, column) {
-    for (let x = 1; x <= row; x++) {
-        createRow();
-        for (let y = 1; y <= column; y++) {
-            createBox();
-        }
-    }
+function createBox() {
+    const box = document.createElement('span');
+    box.className = 'box';
+    grid.lastChild.appendChild(box);
 }
 
 // default size (rangée - colonne)

@@ -5,11 +5,22 @@ html {
 body {
     display: flex;
     flex-direction: column;
-    align-items: stretch;
-    justify-content: stretch;
+    align-items: center;
+    justify-content: center;
     height: 100%;
+    width: 100%;
     margin: 0;
     padding: 0;
+}
+
+#page {
+    flex: none;
+    height: 100vmin;
+    width: 95vmin;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: stretch;
 }
 
 #choice {
